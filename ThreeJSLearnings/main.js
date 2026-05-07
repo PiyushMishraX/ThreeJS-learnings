@@ -1,34 +1,34 @@
-import * as THREE from 'three';
+// import * as THREE from 'three';
 
-//copy paste code for first animation
+// //copy paste code for first animation
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+// const scene = new THREE.Scene();
+// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-renderer.setAnimationLoop( animate );
-document.body.appendChild( renderer.domElement );
+// const renderer = new THREE.WebGLRenderer();
+// renderer.setSize( window.innerWidth, window.innerHeight );
+// renderer.setAnimationLoop( animate );
+// document.body.appendChild( renderer.domElement );
 
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+// const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+// const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+// const cube = new THREE.Mesh( geometry, material );
+// scene.add( cube );
 
-camera.position.z = 5;
+// camera.position.z = 5;
 
-function animate( time ) {
+// function animate( time ) {
 
-  cube.rotation.x = time / 2000;
-  cube.rotation.y = time / 1000;
+//   cube.rotation.x = time / 2000;
+//   cube.rotation.y = time / 1000;
 
-  renderer.render( scene, camera );
+//   renderer.render( scene, camera );
 
-  requestAnimationFrame(animate)
+//   requestAnimationFrame(animate)
 
-}
+// }
 
-animate()
+// animate()
 
 
 // Scene the virtual world created 
@@ -43,4 +43,24 @@ animate()
 // Light -> world ( scene ) mai light
 // directional light ( do not spread like light bulbs )
 // Point bulb -> spreads like a bulb
+
+
+
+
+
+//  DOING THE CODE
+
+import * as THREE from "three" // import everything from three package 
+
+
+//  scene creation
+const scene = new THREE.Scene()
+
+// camera for the view ( currently using perspective camer)
+const camera = new THREE.PerspectiveCamera(75, innerWidth/innerHeight, 0.1, 1000)
+// Perspective camers demands fov( default 75 degree ( use 75 as default one change only when created something unnique)), aspect ratio (innerWidth/innerHeight),  near ( min ditance from the camera if object goes lower than this diatance than camera ignores do not sees it), far ( obj if gone out of the maxdistance will be hidden)
+
+// three js mai unit nahi hoti , numbers hote hai bas
+
+// innerWidth and Height are the width and height of what browser allows , aspect ratio is ration of width and height
 
