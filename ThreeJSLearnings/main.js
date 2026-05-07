@@ -48,7 +48,7 @@
 
 
 
-//  DOING THE CODE
+//  DOING THE CODE ------------------------------>>>>
 
 import * as THREE from "three" // import everything from three package 
 
@@ -82,6 +82,11 @@ const cubeMaterial = new THREE.MeshStandardMaterial({
 const cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
 scene.add(cube)
 
+
+/* light ( needed to see the mesh in scene) */
+
+const light = new THREE.DirectionalLight(0xFFFFFF, 1) // color( white ) and intensity
+scene.add(light)
 
 
 
