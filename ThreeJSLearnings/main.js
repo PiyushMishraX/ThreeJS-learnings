@@ -89,6 +89,17 @@ const light = new THREE.DirectionalLight(0xFFFFFF, 1) // color( white ) and inte
 scene.add(light)
 
 
+/* Rederer */
+
+// light will fall on the mesh(object ) and the camera captures it , we have to calulate everything such as angles, directions , intensity extra for rendering , this work is done by renderer ( renderer does calculation , create image) and use html element to show
 
 
+const renderer = new THREE.WebGLRenderer()
+renderer.setSize(innerWidth, innerHeight)
+
+document.body.appendChild(renderer.domElement) // renderer creates a domElement with the image and we can show the image by adding this element in document ( we see the world of threeJS scene thorugh this)
+
+// renderer have to render multiple times because the position size lighting etc changes overtime which have to be renderered again so we use  webGLrenderer which renders 16 times every second  and do the calculation and show in image 
+
+// for this we have to create a function 
 
