@@ -64,3 +64,26 @@ const camera = new THREE.PerspectiveCamera(75, innerWidth/innerHeight, 0.1, 1000
 
 // innerWidth and Height are the width and height of what browser allows , aspect ratio is ration of width and height
 
+
+//  add camera in scene
+scene.add(camera)
+
+
+/* MESH => {Shape & Material} */
+
+// creating cobe
+const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
+// cobe have height width and depth 1, 1, 1
+const cubeMaterial = new THREE.MeshStandardMaterial({
+     color: 0x00FF00  // genrally in three js given in hex value
+    // 0x00FF00 green
+})
+
+const cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
+scene.add(cube)
+
+
+
+
+
+
