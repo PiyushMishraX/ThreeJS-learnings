@@ -29,3 +29,18 @@ function animate( time ) {
 }
 
 animate()
+
+
+// Scene the virtual world created 
+
+// camera --> view
+// FOV field of view 
+// aspect ratio
+// near or far  // kitne pass ki chije and kitne door ki chize camera dikha sakta hai
+
+// mess -> object ( mesh in 3 js language)-- > it have shape and material
+
+// Light -> world ( scene ) mai light
+// directional light ( do not spread like light bulbs )
+// Point bulb -> spreads like a bulb
+
