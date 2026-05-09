@@ -130,9 +130,20 @@ function animate() {
     // add rotating animation
     // rotation in y means holding the y still and rotaiton around it from left to right
     cube.rotation.y += 0.05
+    cube.rotation.z += 0.05
+    cube.rotation.x += 0.05
     renderer.render(scene,camera) 
 
 }
 
 renderer.setAnimationLoop(animate)// calls the function repeatedily
 
+
+// main concepts-
+//  create camera, mesh and light 
+// changingn postion to see the view
+//  rendering and rerendering 
+// adding animations to mesh
+
+// This much concepts are enough to create projects
+// Three JS completes
