@@ -102,9 +102,8 @@ console.log(cube.position);
 const light = new THREE.DirectionalLight(0xFFFFFF, 1) // color( white ) and intensity
 scene.add(light)
 
-// console.log(light.position);
-
-light.position.y = 4; // light just above the cube so only highlights the top part which so not see at the start // in early stage so we have to set z of it too // camera do not see the top , it sees front but lght do not higlight to front
+// console.log(light.position); 
+light.position.y = 4; // light just above the cube (0,1,0) so only highlights the top part which so not see at the start // in early stage so we have to set z of it too // camera do not see the top , it sees front but lght do not higlight to front
 light.position.z = 4;
 console.log(light.position);
 
@@ -125,8 +124,15 @@ document.body.appendChild(renderer.domElement) // renderer creates a domElement 
 // for this we have to create a function 
 // caluclate how light interacts with  the object and rerenders
 function animate() {
+    // console.log("three js working")
+    // renderer.render(scene,camera) 
+    
+    // add rotating animation
+    // rotation in y means holding the y still and rotaiton around it from left to right
+    cube.rotation.y += 0.05
     renderer.render(scene,camera) 
 
 }
 
 renderer.setAnimationLoop(animate)// calls the function repeatedily
+
