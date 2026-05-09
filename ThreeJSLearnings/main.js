@@ -51,6 +51,7 @@
 //  DOING THE CODE ------------------------------>>>>
 
 import * as THREE from "three" // import everything from three package 
+import { objectGroup } from "three/src/nodes/core/UniformGroupNode.js"
 
 
 //  scene creation
@@ -69,11 +70,21 @@ const camera = new THREE.PerspectiveCamera(75, innerWidth/innerHeight, 0.1, 1000
 scene.add(camera)
 
 
+// console.log(camera.position) // both camera and cube are at 0,0,0 so have to change the diatances to really see the object
+
+camera.position.z = 5
+
+console.log(camera.position)
+
+
+
+
 /* MESH => {Shape & Material} */
 
 // creating cobe
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
 // cobe have height width and depth 1, 1, 1
+// const cubeMaterial = new THREE.MeshBasicMaterial({
 const cubeMaterial = new THREE.MeshStandardMaterial({
      color: 0x00FF00  // genrally in three js given in hex value
     // 0x00FF00 green
@@ -82,11 +93,21 @@ const cubeMaterial = new THREE.MeshStandardMaterial({
 const cube = new THREE.Mesh(cubeGeometry, cubeMaterial)
 scene.add(cube)
 
+console.log(cube.position);
+
+
 
 /* light ( needed to see the mesh in scene) */
 
 const light = new THREE.DirectionalLight(0xFFFFFF, 1) // color( white ) and intensity
 scene.add(light)
+
+// console.log(light.position);
+
+light.position.y = 4; // light just above the cube so only highlights the top part which so not see at the start // in early stage so we have to set z of it too // camera do not see the top , it sees front but lght do not higlight to front
+light.position.z = 4;
+console.log(light.position);
+
 
 
 /* Rederer */
@@ -104,10 +125,8 @@ document.body.appendChild(renderer.domElement) // renderer creates a domElement 
 // for this we have to create a function 
 // caluclate how light interacts with  the object and rerenders
 function animate() {
-    renderer.render(scene.camera) 
+    renderer.render(scene,camera) 
 
-
-    
 }
 
 renderer.setAnimationLoop(animate)// calls the function repeatedily
