@@ -102,4 +102,12 @@ document.body.appendChild(renderer.domElement) // renderer creates a domElement 
 // renderer have to render multiple times because the position size lighting etc changes overtime which have to be renderered again so we use  webGLrenderer which renders 16 times every second  and do the calculation and show in image 
 
 // for this we have to create a function 
+// caluclate how light interacts with  the object and rerenders
+function animate() {
+    renderer.render(scene.camera) 
 
+
+    
+}
+
+renderer.setAnimationLoop(animate)// calls the function repeatedily
